@@ -34,7 +34,7 @@ body {
 }
 
 
-#fundoGame {
+#bgGame {
 	width:950px;
 	height:630px;
 	background-image:url(../assets/img/fundo_game.jpg);
@@ -42,7 +42,7 @@ body {
 	border-style:solid;
 }
 
-#jogador {
+#player {
 	width:256px;
 	height:66px;
 	position:absolute;
@@ -51,7 +51,7 @@ body {
 	background-image:url(../assets/img/apache.png);
 }
 
-#inimigo1 {
+#enemy1 {
 	width: 256px;
 	height: 66px;
 	position: absolute;
@@ -61,7 +61,7 @@ body {
 	
 }
 
-#inimigo2 {
+#enemy2 {
 	width: 165px;
 	height: 70px;
 	position: absolute;
@@ -70,7 +70,7 @@ body {
 	background-image: url(../assets/img/inimigo2.png);
 }
 
-#amigo {
+#friend {
 	width: 44px;
 	height: 51px;
 	position: absolute;
@@ -79,7 +79,7 @@ body {
 	background-image:url(../assets/img/amigo.png);
 }
 
-#inicio {
+#start {
 	width:350px;
 	height:220px;
 	background-color:#FFF;
@@ -206,7 +206,7 @@ body {
      to { background-position: -308px; }
 }
 
-#disparo {
+#shot {
 	width: 50px;
 	height: 8px;
 	position: absolute;
