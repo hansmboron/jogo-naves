@@ -131,7 +131,7 @@ function start() {
             $("#disparo").css("top", topoTiro);
             $("#disparo").css("left", tiroX);
 
-            var tempoDisparo = window.setInterval(executaDisparo, 30);
+            var tempoDisparo = window.setInterval(executaDisparo, 20);
         }
 
         function executaDisparo() {
@@ -204,6 +204,7 @@ function start() {
         if (colisao5.length > 0) {
             somResgate.play();
             salvos++;
+            pontos += 350;
             reposicionaAmigo();
             $("#amigo").remove();
         }
@@ -211,6 +212,7 @@ function start() {
         // amigo perdido
         if (colisao6.length > 0) {
             perdidos++;
+            pontos -= 700;
             amigoX = parseInt($("#amigo").css("left"));
             amigoY = parseInt($("#amigo").css("top"));
             explosao3(amigoX, amigoY);
@@ -299,7 +301,6 @@ function start() {
     }
 
     //Barra de energia
-
     function energia() {
 
         if (energiaAtual == 3) {
@@ -317,7 +318,37 @@ function start() {
 
         if (energiaAtual == 0) {
             $("#energia").css("background-image", "url(assets/img/energia0.png)");
-            //Game Over
+            gameOver();
         }
     }
+
+    function gameOver() {
+        fimdejogo = true;
+        musica.pause();
+        somGameover.play();
+
+        window.clearInterval(jogo.timer);
+        jogo.timer = null;
+
+        $("#jogador").remove();
+        $("#inimigo1").remove();
+        $("#inimigo2").remove();
+        $("#amigo").remove();
+
+        $("#fundoGame").append("<div id='fim'></div>");
+
+        $("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " +
+            pontos + "</p>" +
+            "<p style='color:darkgreen;'>Salvos: " + salvos + "</p>" +
+            "<p style='color:red;'>Perdidos: " + perdidos + "</p>" +
+            "<div id='reinicia' onClick=reiniciaJogo()>" +
+            "<h3>Jogar Novamente</h3></div>");
+    }
+
+}
+
+function reiniciaJogo() {
+    somGameover.pause();
+    $("#fim").remove();
+    start();
 }

@@ -9,6 +9,18 @@ h1 {
 	color:#603A03;
 }
 
+h2 {
+	font-family:Titulo;
+	font-size:20px;
+	color:#FFF
+}
+
+h3 {
+	font-family:Titulo;
+	font-size:20px;
+	color:#603A03;
+}
+
 body {
 	background-image:url(../assets/img/fundo.jpg);
 }
@@ -69,7 +81,7 @@ body {
 
 #inicio {
 	width:350px;
-	height:200px;
+	height:220px;
 	background-color:#FFF;
  	margin-left:auto;
     margin-right:auto;
@@ -229,16 +241,21 @@ body {
 	top: 590px;
 }
 
-h2 {
-	font-family:Titulo;
-	font-size:20px;
-	color:#FFF
-}
-
 #energia {
 	width: 140px;
 	height: 38px;
 	position: absolute;
 	left: 750px;
 	top: 7px;	
+}
+
+#fim {
+	width:350px;
+	height:260px;
+	background-color:#FFF;
+ 	margin-left:auto;
+    margin-right:auto;
+ 	margin-top:100px;
+	text-align:center;
+	padding:10px;
 }
